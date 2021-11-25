@@ -1,0 +1,415 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Verify_Note_Master_Entries" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1210,1479" sap2010:WorkflowViewState.IdRef="Verify_Note_Master_Entries_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="31">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Testing</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Testing</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Verify_Note_Master_Entries" sap:VirtualizedContainerService.HintSize="768,2638" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="O" Name="StatusCode_NM_Home" />
+      <Variable x:TypeArguments="x:String" Name="ItemToBeSearched">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">TX</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="Customer_Number" />
+      <Variable x:TypeArguments="x:String" Name="Customer_Name" />
+      <Variable x:TypeArguments="x:String" Name="Note_Number" />
+      <Variable x:TypeArguments="x:String" Name="Status" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="726,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Common Library\Login.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="usrname">aditya</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="password">aditya</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="726,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Common Library\Navigating Accounting GL Management.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'text  Note Master'" sap:VirtualizedContainerService.HintSize="726,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1b5d24e9-d24a-40ed-ba82-71d3a9e16f58" InformativeScreenshot="8116b8f1bbb1b7bd60848cdfc191b0dd" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='pnlPivotMenu' cls='Pivot' /&gt;&lt;uia cls='TextBlock' name='Note Master' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:AnchorContextAware DesignAnchor="[Rectangle.FromLTRB(260, 130, 334, 149)]" DesignTarget="[Rectangle.FromLTRB(339, 123, 531, 155)]" DisplayName="Context Aware Anchor" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorContextAware_2">
+      <ui:AnchorContextAware.AnchorProvider>
+        <ActivityAction x:TypeArguments="ui:Anchor2Data">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor2Data" Name="ContextAnchor2Data" />
+          </ActivityAction.Argument>
+          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'text  Status Code'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+            <ui:WaitUiElementAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="95e8628f-1069-48d6-a07e-0e956f202347" InformativeScreenshot="343186c9b91e11e65398072137d3fd37" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='lblStatusCode' cls='TextBlock' name='Status Code' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:WaitUiElementAppear.Target>
+          </ui:WaitUiElementAppear>
+        </ActivityAction>
+      </ui:AnchorContextAware.AnchorProvider>
+      <ui:AnchorContextAware.TargetProvider>
+        <ActivityAction x:TypeArguments="ui:Anchor2Data">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor2Data" Name="ContextAnchor2Data" />
+          </ActivityAction.Argument>
+          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBetweenKeys="400" DisplayName="Type Into 'edit  SuggestItemTextBox'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[StatusCode_NM_Home]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4fb62864-5d29-41b8-9e6c-cfcacf0d09f8" InformativeScreenshot="bf7de27c88b81566fee76a5d049961ec" Selector="&lt;uia cls='TextBox' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+        </ActivityAction>
+      </ui:AnchorContextAware.TargetProvider>
+    </ui:AnchorContextAware>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'list item'" sap:VirtualizedContainerService.HintSize="726,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8af2c640-39d9-4a4c-9160-d6aed32b7ea9" InformativeScreenshot="56d4a3807ebe1af11b3dcdf06b613e87" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='SuggestedItemsListView' cls='ListView' /&gt;&lt;uia cls='ListViewItem' name='TurnkeyNet.Client.DataObjects.ItemSelectorObject' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'button  Get Data'" sap:VirtualizedContainerService.HintSize="726,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="857a5e3c-98db-4a32-9c8e-98dadc221f3d" InformativeScreenshot="094e25c6d0667c32d2621ec7e3556b13" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='btnGetData' cls='Button' name='Get Data' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="726,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'button  PART_FilterTogg...'" sap:VirtualizedContainerService.HintSize="726,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8cf89501-cbd1-4181-85e8-b26176822c88" InformativeScreenshot="9e427264a253a50a3dc8685ae06a6173" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='PART_FilterToggleButton' cls='ToggleButton' idx='2' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:TypeInto AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="5" DelayBetweenKeys="400" DelayMS="3" DisplayName="Type Into 'pane  ContentElement'" EmptyField="True" sap:VirtualizedContainerService.HintSize="726,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SimulateType="False" Text="[ItemToBeSearched]">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a8e701a-e112-4b9f-ac70-f488da83128a" InformativeScreenshot="fb87e30f1e54f0b14cd5de4fd5918d7f" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='ContentElement' cls='ScrollViewer' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'pane  ContentElement'" sap:VirtualizedContainerService.HintSize="726,152" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+      <ui:SendHotkey.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3dd689f6-9588-486b-9783-a8f3b98d75b8" InformativeScreenshot="fb87e30f1e54f0b14cd5de4fd5918d7f" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='ContentElement' cls='ScrollViewer' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:SendHotkey.Target>
+    </ui:SendHotkey>
+    <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="726,180" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_1" Operator="Equality" OutputArgument="Text" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+      <uta:VerifyControlAttribute.ActivityToTest>
+        <ActivityAction>
+          <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'text  456'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_1">
+            <ui:GetFullText.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0f45b04e-44ea-424d-8081-566bbc8667a1" InformativeScreenshot="a13010853f1ea02b1e4a5c44d85e9f72" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia cls='TextBlock' name='456' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetFullText.Target>
+            <ui:GetFullText.Text>
+              <OutArgument x:TypeArguments="x:String">[Customer_Number]</OutArgument>
+            </ui:GetFullText.Text>
+          </ui:GetFullText>
+        </ActivityAction>
+      </uta:VerifyControlAttribute.ActivityToTest>
+      <uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+        <ActivityFunc x:TypeArguments="x:Object">
+          <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_1">
+            <uta:ArgumentsBridge.Input>
+              <InArgument x:TypeArguments="x:Object">
+                <VariableValue x:TypeArguments="x:Object">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="x:Object" Name="Text" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </uta:ArgumentsBridge.Input>
+          </uta:ArgumentsBridge>
+        </ActivityFunc>
+      </uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+      <uta:VerifyControlAttribute.Expression>
+        <InArgument x:TypeArguments="x:String">["456"]</InArgument>
+      </uta:VerifyControlAttribute.Expression>
+    </uta:VerifyControlAttribute>
+    <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="726,180" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_2" Operator="Contains" OutputArgument="Text" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+      <uta:VerifyControlAttribute.ActivityToTest>
+        <ActivityAction>
+          <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'text TX'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_2">
+            <ui:GetFullText.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="81076d3f-d9b6-4467-b89a-b4d97e7a873d" InformativeScreenshot="6a818f889e204955317b846dd0c4ac74" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia cls='TextBlock' name='TX CHILD SUPPORT SDU' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetFullText.Target>
+            <ui:GetFullText.Text>
+              <OutArgument x:TypeArguments="x:String">[Customer_Name]</OutArgument>
+            </ui:GetFullText.Text>
+          </ui:GetFullText>
+        </ActivityAction>
+      </uta:VerifyControlAttribute.ActivityToTest>
+      <uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+        <ActivityFunc x:TypeArguments="x:Object">
+          <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_2">
+            <uta:ArgumentsBridge.Input>
+              <InArgument x:TypeArguments="x:Object">
+                <VariableValue x:TypeArguments="x:Object">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="x:Object" Name="Text" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </uta:ArgumentsBridge.Input>
+          </uta:ArgumentsBridge>
+        </ActivityFunc>
+      </uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+      <uta:VerifyControlAttribute.Expression>
+        <InArgument x:TypeArguments="x:String">["TX CHILD"]</InArgument>
+      </uta:VerifyControlAttribute.Expression>
+    </uta:VerifyControlAttribute>
+    <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="726,180" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_3" Operator="Equality" OutputArgument="Text" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+      <uta:VerifyControlAttribute.ActivityToTest>
+        <ActivityAction>
+          <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'text  1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_3">
+            <ui:GetFullText.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c6659bf3-60d4-4221-9f7b-b8260cbecb6c" InformativeScreenshot="ad2040c84be1675ccacec55c07fec38d" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia cls='TextBlock' idx='2' name='1' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetFullText.Target>
+            <ui:GetFullText.Text>
+              <OutArgument x:TypeArguments="x:String">[Note_Number]</OutArgument>
+            </ui:GetFullText.Text>
+          </ui:GetFullText>
+        </ActivityAction>
+      </uta:VerifyControlAttribute.ActivityToTest>
+      <uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+        <ActivityFunc x:TypeArguments="x:Object">
+          <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_3">
+            <uta:ArgumentsBridge.Input>
+              <InArgument x:TypeArguments="x:Object">
+                <VariableValue x:TypeArguments="x:Object">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="x:Object" Name="Text" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </uta:ArgumentsBridge.Input>
+          </uta:ArgumentsBridge>
+        </ActivityFunc>
+      </uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+      <uta:VerifyControlAttribute.Expression>
+        <InArgument x:TypeArguments="x:String">["1"]</InArgument>
+      </uta:VerifyControlAttribute.Expression>
+    </uta:VerifyControlAttribute>
+    <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="726,180" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_4" Operator="Contains" OutputArgument="Text" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+      <uta:VerifyControlAttribute.ActivityToTest>
+        <ActivityAction>
+          <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'text  Open'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_4">
+            <ui:GetFullText.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2daac79e-6b26-44be-97a1-9da7107e840c" InformativeScreenshot="8d75292758a8d8fa38b15aee01947dc7" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia cls='TextBlock' name='Open' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetFullText.Target>
+            <ui:GetFullText.Text>
+              <OutArgument x:TypeArguments="x:String">[Status]</OutArgument>
+            </ui:GetFullText.Text>
+          </ui:GetFullText>
+        </ActivityAction>
+      </uta:VerifyControlAttribute.ActivityToTest>
+      <uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+        <ActivityFunc x:TypeArguments="x:Object">
+          <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_4">
+            <uta:ArgumentsBridge.Input>
+              <InArgument x:TypeArguments="x:Object">
+                <VariableValue x:TypeArguments="x:Object">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="x:Object" Name="Text" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </uta:ArgumentsBridge.Input>
+          </uta:ArgumentsBridge>
+        </ActivityFunc>
+      </uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+      <uta:VerifyControlAttribute.Expression>
+        <InArgument x:TypeArguments="x:String">["Open"]</InArgument>
+      </uta:VerifyControlAttribute.Expression>
+    </uta:VerifyControlAttribute>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="726,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Common Library\Logout.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>

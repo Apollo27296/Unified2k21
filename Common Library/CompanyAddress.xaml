@@ -1,0 +1,273 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CompanyAddress" sap:VirtualizedContainerService.HintSize="1210,819" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="25">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Company Address" sap:VirtualizedContainerService.HintSize="768,1150" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="State">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">B</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="Zipcode">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">A</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="City">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Michigan</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="Address1">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Detroit</Literal>
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:AnchorContextAware DesignAnchor="[Rectangle.FromLTRB(796, 399, 857, 418)]" DesignTarget="[Rectangle.FromLTRB(862, 392, 1082, 424)]" DisplayName="Type Address 1" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorContextAware_1">
+      <ui:AnchorContextAware.AnchorProvider>
+        <ActivityAction x:TypeArguments="ui:Anchor2Data">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor2Data" Name="ContextAnchor2Data" />
+          </ActivityAction.Argument>
+          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'text  Address 1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+            <ui:WaitUiElementAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8c0e2462-c192-475b-a27c-803a2765586a" InformativeScreenshot="3a325ad9e8ec6940de2e7ba64c6a0fe0" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='pivotControl' cls='Pivot' /&gt;&lt;uia automationid='CompanyAddress1lbl' cls='TextBlock' name='Address 1' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:WaitUiElementAppear.Target>
+          </ui:WaitUiElementAppear>
+        </ActivityAction>
+      </ui:AnchorContextAware.AnchorProvider>
+      <ui:AnchorContextAware.TargetProvider>
+        <ActivityAction x:TypeArguments="ui:Anchor2Data">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor2Data" Name="ContextAnchor2Data" />
+          </ActivityAction.Argument>
+          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBetweenKeys="400" DisplayName="Type Into 'edit  CompanyAddress1tbx'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[Address1]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b4ae56e6-4a94-4fb5-aa32-4e2ce6589f00" InformativeScreenshot="3cb183a12183a0f34bea3c1212a81561" Selector="&lt;uia cls='TextBox' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+        </ActivityAction>
+      </ui:AnchorContextAware.TargetProvider>
+    </ui:AnchorContextAware>
+    <ui:AnchorContextAware DesignAnchor="[Rectangle.FromLTRB(833, 435, 857, 454)]" DesignTarget="[Rectangle.FromLTRB(862, 428, 1082, 460)]" DisplayName="Type City" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorContextAware_2">
+      <ui:AnchorContextAware.AnchorProvider>
+        <ActivityAction x:TypeArguments="ui:Anchor2Data">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor2Data" Name="ContextAnchor2Data" />
+          </ActivityAction.Argument>
+          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'text  City'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+            <ui:WaitUiElementAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d1c8f495-8865-4ce3-9e77-8bb1e96ca18d" InformativeScreenshot="7acc7833af095a6327b1dfc8e6199e58" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='pivotControl' cls='Pivot' /&gt;&lt;uia automationid='CompanyCitylbl' cls='TextBlock' name='City' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:WaitUiElementAppear.Target>
+          </ui:WaitUiElementAppear>
+        </ActivityAction>
+      </ui:AnchorContextAware.AnchorProvider>
+      <ui:AnchorContextAware.TargetProvider>
+        <ActivityAction x:TypeArguments="ui:Anchor2Data">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor2Data" Name="ContextAnchor2Data" />
+          </ActivityAction.Argument>
+          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBetweenKeys="400" DisplayName="Type Into 'edit  CompanyCitytbx'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[City]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2bfe0c5f-f974-4b1e-8491-4d002a6b31dd" InformativeScreenshot="a22979a8407c57f182ca6d4d9b596d33" Selector="&lt;uia cls='TextBox' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+        </ActivityAction>
+      </ui:AnchorContextAware.TargetProvider>
+    </ui:AnchorContextAware>
+    <ui:AnchorContextAware DesignAnchor="[Rectangle.FromLTRB(837, 471, 857, 490)]" DesignTarget="[Rectangle.FromLTRB(862, 464, 1012, 496)]" DisplayName="Type ZIP" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorContextAware_3">
+      <ui:AnchorContextAware.AnchorProvider>
+        <ActivityAction x:TypeArguments="ui:Anchor2Data">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor2Data" Name="ContextAnchor2Data" />
+          </ActivityAction.Argument>
+          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'text  ZIP'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3">
+            <ui:WaitUiElementAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fa38d36f-6b52-4104-9cae-8361209cd56e" InformativeScreenshot="758194f4df9b904aae7cf2f953d631f2" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='pivotControl' cls='Pivot' /&gt;&lt;uia automationid='CompanyZiplbl' cls='TextBlock' name='ZIP' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:WaitUiElementAppear.Target>
+          </ui:WaitUiElementAppear>
+        </ActivityAction>
+      </ui:AnchorContextAware.AnchorProvider>
+      <ui:AnchorContextAware.TargetProvider>
+        <ActivityAction x:TypeArguments="ui:Anchor2Data">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor2Data" Name="ContextAnchor2Data" />
+          </ActivityAction.Argument>
+          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBetweenKeys="400" DisplayName="Type Into 'edit  ComapnyZiptbx'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[Zipcode]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44508d45-7468-4850-9a1f-63f75a0642de" InformativeScreenshot="028e7c096fc3db64afad0e609978cc16" Selector="&lt;uia cls='TextBox' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+        </ActivityAction>
+      </ui:AnchorContextAware.TargetProvider>
+    </ui:AnchorContextAware>
+    <ui:AnchorContextAware DesignAnchor="[Rectangle.FromLTRB(1152, 435, 1183, 454)]" DesignTarget="[Rectangle.FromLTRB(1188, 426, 1410, 461)]" DisplayName="Type State" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorContextAware_4">
+      <ui:AnchorContextAware.AnchorProvider>
+        <ActivityAction x:TypeArguments="ui:Anchor2Data">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor2Data" Name="ContextAnchor2Data" />
+          </ActivityAction.Argument>
+          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'text  State'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4">
+            <ui:WaitUiElementAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e6a99d1b-2015-44b6-bd8d-60ca1dfbba7e" InformativeScreenshot="3081ab9b96be1c57ecb07e3b9e0d39f0" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='pivotControl' cls='Pivot' /&gt;&lt;uia automationid='CompanyStatelbl' cls='TextBlock' name='State' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:WaitUiElementAppear.Target>
+          </ui:WaitUiElementAppear>
+        </ActivityAction>
+      </ui:AnchorContextAware.AnchorProvider>
+      <ui:AnchorContextAware.TargetProvider>
+        <ActivityAction x:TypeArguments="ui:Anchor2Data">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:Anchor2Data" Name="ContextAnchor2Data" />
+          </ActivityAction.Argument>
+          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBetweenKeys="400" DisplayName="Type Into 'edit  CompanyStatetbx'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[State]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0d806fe8-1803-40a2-bfe5-ba74318a6d27" InformativeScreenshot="9f41a2efcaf8844a6c4f2c4411ac0715" Selector="&lt;uia cls='TextBox' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
+        </ActivityAction>
+      </ui:AnchorContextAware.TargetProvider>
+    </ui:AnchorContextAware>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'button  Save'" sap:VirtualizedContainerService.HintSize="726,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="05c473e7-83d1-48c9-a139-57fd5c2e4999" InformativeScreenshot="009724d588e4d4fb95fc9b3f028914e7" Selector="&lt;wnd app='applicationframehost.exe' appid='TurnkeyComputerSystemsLLC.TurnkeyUnifiedManagement_bj095e82pdmte!App' title='Turnkey Unified Management' /&gt;&lt;uia automationid='DoneButton' cls='Button' name='Save' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+  </Sequence>
+</Activity>
