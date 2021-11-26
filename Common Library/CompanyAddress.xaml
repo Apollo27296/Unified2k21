@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CompanyAddress" sap:VirtualizedContainerService.HintSize="1210,819" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CompanyAddress" sap:VirtualizedContainerService.HintSize="1210,1215" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
       <x:String>System.Activities</x:String>
@@ -61,26 +61,14 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Company Address" sap:VirtualizedContainerService.HintSize="768,1150" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="State">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">B</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="Zipcode">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">A</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="B" Name="State" />
+      <Variable x:TypeArguments="x:String" Default="A" Name="Zipcode" />
       <Variable x:TypeArguments="x:String" Name="City">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String">Michigan</Literal>
+          <Literal x:TypeArguments="x:String">MI</Literal>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="x:String" Name="Address1">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Detroit</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="Detroit" Name="Address1" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
